@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Scheduler</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Instagram Scheduler</h1>
+        </header>
+        <div class="calendar">
+            <!-- Calendar view will be dynamically generated -->
+        </div>
+        <div id="post-details">
+            <!-- Post details will be dynamically displayed here -->
+        </div>
+        <div id="drafts">
+            <h2>Drafts</h2>
+            <div id="draft-list">
+                <!-- Drafts will be listed here -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('ServiceWorker registered: ', registration);
+                }).catch((error) => {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+        }
+    </script>
+</body>
+</html>
