@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "date": "2024-08-20T10:00:00Z",
+        "caption": "Excited to share my new project! #coding #webdev",
+        "image": "post1.jpg",
+        "hashtags": ["#coding", "#webdev"],
+        "tags": ["@username1", "@username2"],
+        "status": "scheduled"
+    },
+    {
+        "id": 2,
+        "date": "2024-08-22T14:00:00Z",
+        "caption": "Another day, another code snippet. #javascript",
+        "image": "post2.jpg",
+        "hashtags": ["#javascript"],
+        "tags": ["@username3"],
+        "status": "scheduled"
+    }
+]
