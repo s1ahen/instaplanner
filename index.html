@@ -3,38 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Scheduler</title>
+    <title>My Post Sharing Site</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <div id="app">
-        <header>
-            <h1>Instagram Scheduler</h1>
-        </header>
-        <div class="calendar">
-            <!-- Calendar view will be dynamically generated -->
-        </div>
-        <div id="post-details">
-            <!-- Post details will be dynamically displayed here -->
-        </div>
-        <div id="drafts">
-            <h2>Drafts</h2>
-            <div id="draft-list">
-                <!-- Drafts will be listed here -->
-            </div>
-        </div>
+    <div class="container">
+        <h1>Add a New Post</h1>
+        <form id="postForm">
+            <label for="imageInput">Upload Image:</label>
+            <input type="file" id="imageInput" accept="image/*" required>
+
+            <label for="bioInput">Bio:</label>
+            <textarea id="bioInput" placeholder="Enter your bio..." required></textarea>
+
+            <label for="dateInput">Post Date:</label>
+            <input type="date" id="dateInput" required>
+
+            <button type="submit">Add</button>
+        </form>
+
+        <h2>Posts</h2>
+        <div id="postsContainer" class="posts-container"></div>
     </div>
+    
     <script src="script.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then((registration) => {
-                    console.log('ServiceWorker registered: ', registration);
-                }).catch((error) => {
-                    console.log('ServiceWorker registration failed: ', error);
-                });
-        }
-    </script>
 </body>
 </html>
