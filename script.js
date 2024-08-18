@@ -74,3 +74,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+postForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const imageInput = document.getElementById('imageInput');
+    const bioInput = document.getElementById('bioInput').value;
+    const dateInput = document.getElementById('dateInput').value;
+
+    const reader = new FileReader();
+    reader.onload = function () {
+        const image = reader.result;
+        addPost(image, bioInput, dateInput);
+        postForm.reset();
+    };
+    reader.readAsDataURL(imageInput.files[0]);
+});
+
